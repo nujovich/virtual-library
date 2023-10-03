@@ -3,18 +3,25 @@ import { AddBookForm } from "./AddBookForm";
 export const Book = ({ book }) => {
   const { title, cover, author, year } = book;
   return (
-    <div className="flex flex-col items-center bg-white rounded-lg">
+    <div className="flex flex-col bg-white rounded-lg">
       <div className="relative">
         <img
-          className="inset-0 aspect-[314/475] object-cover w-full h-full"
+          className="inset-0 aspect-[24/36] object-cover w-full h-full rounded-t-lg"
           src={cover}
           alt={title}
-        />
+          width={24}
+          height={36}
+          srcSet={`${cover} 24w`}
+        ></img>
       </div>
-      <div className="flex flex-col justify-between gap-2 p-4 leading-normal">
-        <h3 className="text-gray-900 font-medium text-lg">{title}</h3>
-        <p className="text-gray-500">{author.name}</p>
-        <p className="text-gray-500">{year}</p>
+      <div className="flex flex-col justify-start gap-2 p-2">
+        <h1 className="text-gray-900 font-medium text-lg sm:truncate">
+          {title}
+        </h1>
+        <h2 className="text-gray-500">
+          <p className="sm:truncate">{author.name}</p>
+          <p>{year}</p>
+        </h2>
         <AddBookForm book={book}>
           <button
             type="submit"
