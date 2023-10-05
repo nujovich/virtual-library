@@ -14,7 +14,7 @@ export default function ReadListFlyout() {
       {Object.values($readBookList).length > 0 ? (
         <ul className="grid sm:grid-cols-1 md:grid-cols-2 grid-cols-4 gap-6 p-4 leading-normal">
           {Object.values($readBookList).map((book) => (
-            <li key={book.title} class="flex flex-col gap-2">
+            <li key={book.title} className="flex flex-col gap-2">
               <img className="w-24 h-36" src={book.cover} alt={book.title} />
               <div className="flex flex-col gap-2">
                 <h3 className="text-white font-medium text-lg">{book.title}</h3>
